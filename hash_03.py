@@ -15,9 +15,11 @@ def solution(genres, plays):
     t.sort(key = byFreq, reverse = True)
     for key in h.keys():
         h[key].sort(key = byFreq, reverse = True)
-    
+
     answer = []
     for key in t:
         for i in range(2):
+            if ((len(h[key[0]])==1) and (i == 1)):
+                break
             answer.append(h[key[0]][i][0])
     return answer
